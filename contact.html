@@ -29,7 +29,7 @@
 
 <h2>Contact Me</h2>
 
-<form aria-label="Contact Form">
+<form aria-label="Contact Form" onsubmit="showMessage(event)">
 
 <label for="name">Name</label>
 <input type="text" id="name" required>
@@ -42,8 +42,9 @@
 
 <button type="submit">Send Message</button>
 
-</form>
+<p id="successMsg"></p>
 
+</form>
 </section>
 
 </main>
@@ -51,6 +52,20 @@
 <footer>
 <p>&copy; 2026 My Portfolio</p>
 </footer>
+
+<script>
+function showMessage(event) {
+    event.preventDefault();
+
+    document.getElementById("successMsg").innerHTML =
+        "✅ Message Sent Successfully!";
+
+    document.getElementById("successMsg").style.color = "green";
+    document.getElementById("successMsg").style.fontWeight = "bold";
+
+    document.querySelector("form").reset();
+}
+</script>
 
 </body>
 </html>
