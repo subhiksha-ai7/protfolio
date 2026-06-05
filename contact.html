@@ -3,14 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Contact Me">
 <title>Contact</title>
+
 <link rel="stylesheet" href="style.css">
+
+<style>
+#successMsg{
+    margin-top:15px;
+    text-align:center;
+    font-size:16px;
+    font-weight:bold;
+    color:green;
+}
+</style>
+
 </head>
 
 <body>
 
 <header>
-<nav>
+<nav aria-label="Main Navigation">
+
 <h1>My Portfolio</h1>
 
 <ul>
@@ -32,36 +46,52 @@
 <form aria-label="Contact Form" onsubmit="showMessage(event)">
 
 <label for="name">Name</label>
-<input type="text" id="name" required>
+<input
+type="text"
+id="name"
+name="name"
+required
+aria-required="true">
 
 <label for="email">Email</label>
-<input type="email" id="email" required>
+<input
+type="email"
+id="email"
+name="email"
+required
+aria-required="true">
 
 <label for="message">Message</label>
-<textarea id="message" rows="5" required></textarea>
+<textarea
+id="message"
+name="message"
+rows="5"
+required
+aria-required="true"></textarea>
 
-<button type="submit">Send Message</button>
+<button type="submit">
+Send Message
+</button>
 
 <p id="successMsg"></p>
 
 </form>
+
 </section>
 
 </main>
 
 <footer>
-<p>&copy; 2026 My Portfolio</p>
+<p>&copy; 2026 My Portfolio. All Rights Reserved.</p>
 </footer>
 
 <script>
-function showMessage(event) {
+function showMessage(event)
+{
     event.preventDefault();
 
     document.getElementById("successMsg").innerHTML =
-        "✅ Message Sent Successfully!";
-
-    document.getElementById("successMsg").style.color = "green";
-    document.getElementById("successMsg").style.fontWeight = "bold";
+    "✅ Message Sent Successfully!";
 
     document.querySelector("form").reset();
 }
